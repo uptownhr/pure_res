@@ -158,7 +158,7 @@ span.attention {display:block;margin:15px 0;padding:8px 10px 8px 10px;background
 #footer li {list-style:none;float:left;padding-right:20px;font-weight:bold;}
 #login {display: block;float: left;}
 #lang {background: none repeat scroll 0 0 #EBEBEB;display: block;float: left;padding: 0 10px;}
-#menu {float: right; font-weight:normal; margin-right: 180px; }
+#menu {float: right; font-weight:normal; margin-right: 150px; }
 .mainphead {color: #FFFFFF;left: 30px;position: absolute;text-transform: uppercase;top: 40px;}
 .mainphead1 {color: #FFFFFF;font-size: 34px;left: 30px;position: absolute;text-transform: uppercase;top: 70px;}
 .mainpbutton {  background: none repeat scroll 0 0 #ED1C24;color: #FFFFFF;display: block;font-size: 14px;left: 24px;
@@ -173,18 +173,18 @@ span.attention {display:block;margin:15px 0;padding:8px 10px 8px 10px;background
 .m_mod {padding:0;width: 354px !important;}
 .m_mod .module-body{padding:0}
 #mainmods {background: url("../images/mainmodbg.jpg") no-repeat scroll 380px 256px transparent;border-top: 8px solid #606060;margin-bottom: 10px;}
-.m_social {border-right: 2px solid #D4D4D4;color: #606060;padding: 0;width: 136px !important;margin-bottom:10px;}
+.m_social {border-right: 1px dashed #D4D4D4;color: #606060;padding: 0;width: 136px !important;margin-bottom:10px;}
 .m_social .module-body {padding:0;}
 .m_social h1 {font-weight: normal;line-height: 22px;margin-top: 12px;text-align: center;text-transform: uppercase;}
-.m_pure {border-right: 2px solid #D4D4D4;color: #606060;padding: 0;width: 193px !important;}
+.m_pure {border-right: 1px dashed #D4D4D4;color: #606060;padding: 0;width: 193px !important;}
 .m_pure h1 { font-weight: normal;line-height: 22px;margin-bottom: 8px;margin-top: 12px;text-align: center;   text-transform: uppercase;}
 .m_pure .module-body {padding:0;}
 .m_news .acymailing_form{background:#606060;}
 .m_news .acyfield_email {padding-left:5px;color:#fff; font-style:italic;}
 .m_news .acysubbuttons {padding-right:3px;}
-.m_news .button{padding: 4px 2px; background:#F0F1F0;border:none;}
-.m_news .acymailing_module_form td {padding-top:3px;padding-bottom:3px !important;}
-.m_news #user_email_formAcymailing1 {background:#606060;color:#fff;border:none;height: 26px;}
+.m_news .button{ background:#F0F1F0;border:none;}
+.m_news .acymailing_module_form td {}
+.m_news #user_email_formAcymailing1 {background:#606060;color:#fff;border:none;}
 .readmore {padding:0;background:#fff;width:354px !important;}
 .readmore .module-body{ overflow: hidden;padding: 0 0 10px 14px;width: 340px;}
 .readmore a{color:#E66B50;font-weight:normal;text-transform: uppercase;font-style:italic;}
@@ -238,15 +238,48 @@ span.attention {display:block;margin:15px 0;padding:8px 10px 8px 10px;background
 .store .readmore {background:#F8F7F7;}
 
 
-
+@font-face {
+    font-family: 'HelveticaBoldCondensed';
+    src: url('fonts/HelveticaBoldCondensed.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
 @font-face {
     font-family: 'HelveticaLTStd';
     src: url('fonts/HelveticaLTStd-LightCond.otf');
     font-weight: normal;
     font-style: normal;
 }
-#menu, #login, #lang { font-family:HelveticaLTStd; }
-#menu { font-size: 20px; margin-top:2px; }
+@font-face {
+    font-family: 'HelveticaLTStdBold';
+    src: url('fonts/HelveticaLTStd-BoldCond.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+#menu, #login, #lang, .pname1 { font-family:HelveticaLTStd; }
+#menu { margin-top:2px; }
+#menu li a { font-size: 20px; }
 #login { font-size: 16px; text-transform: uppercase; position: absolute; top: 22px; right: 100px; }
 #lang { font-size: 14px; position: absolute; top: 20px; right: 23px; }
 #nav { position: relative;  }
+.mainphead,.mainphead1,.mainpbutton,.seemore, h1 { font-family: HelveticaBoldCondensed; }
+.mainphead { font-size: 14px; }
+.mainphead1 { font-size: 48px; }
+.mainpbutton { font-size: 18px; }
+.pname { font-size: 48px; color: #3E3E3E; font-family:HelveticaLTStdBold; margin-top:10px; }
+.pname1 { font-size: 22px; }
+h1 { color: #606060; font-size: 27px; line-height: 104%!important; }
+.m_news h3.module-title, .acymailing_module_form .text-input { font-family: 'Myriad Pro'; font-size: 13px; font-style: italic; }
+#user_email_formAcymailing1 {
+	height: 18px; margin-top:-5px;
+}
+.m_news .button { font-family:HelveticaLTStdBold; font-size: 18px; padding: 6px 8px; height: 30px; display: block; }
+.acysubbuttons {height: auto;}
+.acyfield_email { padding-top: 0; }
+.acymailing_module_form { background: #606060!important; height: 42px; position: relative; width:240px; padding:0;  }
+.acymailing_module_form .button { position: absolute; top: 6px; right: 6px; }
+.acymailing_module_form .text-input { position: absolute; top: 6px; left: 6px; background: #606060!important; color: white; outline: none; border: none; height: 30px; width: 150px; }
+
+.company-info { font-family: 'Myriad Pro'; }
+
+#mainmods2 .module-title { font-family: HelveticaBoldCondensed; color: #3B3B3B; font-size: 14px; text-transform: uppercase; }

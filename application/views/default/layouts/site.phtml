@@ -4,9 +4,6 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="robots" content="index, follow" />
-  <meta name="keywords" content="joomla, Joomla" />
-  <meta name="description" content="Joomla! - the dynamic portal engine and content management system" />
-  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
   <title>Welcome to the Frontpage</title>
   <link href="/index.php?option=com_content&amp;view=frontpage&amp;Itemid=1&amp;format=feed&amp;type=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
   <link href="/index.php?option=com_content&amp;view=frontpage&amp;Itemid=1&amp;format=feed&amp;type=atom" rel="alternate" type="application/atom+xml" title="Atom 1.0" />
@@ -209,45 +206,10 @@ var K2SitePath = '/';
 	<div class="acymailing_fulldiv" id="acymailing_fulldiv_formAcymailing1" style="text-align:center" >
 
 		<form id="formAcymailing1" action="/index.php?option=com_content&amp;view=frontpage&amp;Itemid=1" onsubmit="return submitacymailingform('optin','formAcymailing1')" method="post" name="formAcymailing1"  >
-
-		<div class="acymailing_module_form" >
-
-									<table class="acymailing_form">
-
-				<tr>
-
-												<td class="acyfield_email">
-
-								<input id="user_email_formAcymailing1"  onfocus="if(this.value == 'enter your email...') this.value = '';" onblur="if(this.value=='') this.value='enter your email...';" class="inputbox" type="text" name="user[email]" size="30" value="enter your email..." />
-
-							</td> 					<td  class="acysubbuttons">
-
-												<input class="button subbutton" type="submit" value="GO" name="Submit" onclick="try{ return submitacymailingform('optin','formAcymailing1'); }catch(err){alert('The form could not be submitted '+err);return false;}"/>
-
-											</td>
-
-				</tr>
-
-			</table>
-
-						<input type="hidden" name="ajax" value="0"/>
-
-			<input type="hidden" name="ctrl" value="sub"/>
-
-			<input type="hidden" name="task" value="notask"/>
-
-			<input type="hidden" name="redirect" value="http%3A%2F%2Fuptownhr.dyndns.org%2Findex.php%3Foption%3Dcom_content%26view%3Dfrontpage%26Itemid%3D1"/>
-
-			<input type="hidden" name="redirectunsub" value="http%3A%2F%2Fuptownhr.dyndns.org%2Findex.php%3Foption%3Dcom_content%26view%3Dfrontpage%26Itemid%3D1"/>
-
-			<input type="hidden" name="option" value="com_acymailing"/>
-
-						<input type="hidden" name="hiddenlists" value="1"/>
-
-			<input type="hidden" name="acyformname" value="formAcymailing1" />
-
-						<input type="hidden" name="Itemid" value="1"/>			</div>
-
+			<div class="acymailing_module_form">
+				<input id="email" placeholder="Enter your email" class="text-input" />
+				<input class="button" type="submit" value="GO" name="Submit" />
+			</div>
 		</form>
 
 	</div>
@@ -265,42 +227,42 @@ var K2SitePath = '/';
 																		<div id="mainmods2" class="spacer w33">
 												<div class="module m readmore">
 		
-				<h3 class="module-title">Newsflash</h3>
+				<h3 class="module-title" style="padding-top:15px;">Newsflash</h3>
 			    <div class="module-body">
 	        
 
 
-<table class="contentpaneopen readmore">
-	<tr>
-		<td valign="top" ><p>Joomla! makes it easy to launch a Web site of any kind.</td>
+<table class="contentpaneopen readmore" padding="0">
+	<tr style="padding:0;">
+		<td valign="top" style="padding:0"><p style="color:#878787;font-family:'Myriad Pro'; font-size:12px">Sub heading goes here for user to read a tad bit more....</p></td>
 	</tr>
 	<tr>
         <td valign="top" >
 
-       <a class="readmore" href="/index.php?option=com_content&amp;view=article&amp;id=2%3Anewsflash-1&amp;catid=3%3Anewsflash&amp;Itemid=1">read more ></a>		</td>
+       <a class="readmore" href="/index.php?option=com_content&amp;view=article&amp;id=2%3Anewsflash-1&amp;catid=3%3Anewsflash&amp;Itemid=1" style="font-family:'HelveticaBoldCondensed';font-style:italic;">read more ></a>		</td>
      </tr>
 </table>
         </div>
 	</div>
 	
-												<div class="module m info">
+												<div class="module m info" id="company-info">
 		
 			    <div class="module-body">
 	        <div style="float:left;font-size: 12px;">
 
-<h3>COMPANY Info</h3>
+<h3 style="font-size: 14px">COMPANY Info</h3>
 
-Address Info and other info<br />
+<span style="color:878787;font-family:'Myriad Pro'">Address Info and other info<br />
 
 Lorem ipsum dolor sit amet, consectetur adipisicing<br /><br />
 
 "Sed ut perspiciatis unde omnis iste natus error sit voluptatem<br />
 
-accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo<br /><br /><br /><br />
+accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo<br /><br /><br /><br /></span>
 
 </div>
 
-<div style="float:right;">PURE RESULTS &trade;</div>        </div>
+<div style="float:right; font-family:'Myriad Pro'">PURE RESULTS &trade;</div>        </div>
 	</div>
 	
 									</div>
