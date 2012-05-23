@@ -8,7 +8,12 @@ class PageController extends My_Controller {
 
     public function indexAction(){
     }
-
+	public function aboutAction(){
+	}
+	public function productsAction(){
+	}
+	public function contactAction(){
+	}
     public function __call($method, $args = array()){
     	$action = substr($method, 0, strlen($method)-6);
 
