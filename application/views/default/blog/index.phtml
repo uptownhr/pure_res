@@ -17,6 +17,11 @@
 				}else{
 					$category_id = 0;
 				}
+			?>
+			
+			<a class="<?php if($category_id == 0){ echo 'active'; }?>" href="/blog">All</a> |
+			
+			<?php 
 				foreach($this->categories->rows() as $category){?>
 					<a class="<?php if($category_id == $category['category_id']){ echo 'active'; }?>" href="/blog?category_id=<?php echo $category['category_id'];?>"><?php echo $category['category'];?></a> |
 			<?php }?>
