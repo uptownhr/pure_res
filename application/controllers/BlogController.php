@@ -14,7 +14,9 @@ class BlogController extends My_Controller {
     				->joinUser()
     				->joinCategory()
     				->filter($this->params())
-    				->withPager($this->params('page', 1))->get();
+    				->withPager($this->params('page', 1))
+    				->limit(6)
+    				->get();
     }
 
     public function postAction(){
