@@ -385,7 +385,7 @@ div.itemList {}
 	div#itemListSecondary {}
 	div#itemListLinks {background:#f7fafe;border:1px solid #ddd;margin:8px 0;padding:8px;}
 
-		div.itemContainer { background: none repeat scroll 0 0 #FFFFFF;float: left;margin-right: 10px;margin-top: 10px;width: 32.63%;}
+		div.itemContainer { height:805px; background: none repeat scroll 0 0 #FFFFFF;float: left;margin-right: 10px;margin-top: 10px;width: 32.63%;}
 		div.itemContainerLast {margin-right:0;} /* this class is appended to the last container on each row of items (useful when you want to set 0 padding/margin to the last container) */
 
 /* --- Item block for each item group --- */
