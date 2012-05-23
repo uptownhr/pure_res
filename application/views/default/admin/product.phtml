@@ -1,0 +1,59 @@
+<div class="left">
+
+	<div class="content">
+
+		<div class="page-header">
+		  <h3>
+		  	<?php if($this->params('id')){ ?>
+		  		Update <?php echo strtolower($this->model); ?>
+		  	<?php }else { ?>
+		  		Add <?php echo strtolower($this->model); ?>
+		  	<?php } ?>
+		  </h3>
+		</div>
+
+		<div class="row">
+		  	<div>
+		  		<form class="trig_save" action="/admin/data" method="POST">
+		  			<input type="hidden" name="model" value="<?php echo $this->model; ?>">
+		  			<input type="hidden" name="id" value="<?php echo $this->params('id'); ?>">
+		  			<input type="hidden" name="user_id" value="<?php echo $this->data->row('user_id', $this->user['user_id']); ?>">
+			        <fieldset>
+
+						<legend><a name="basic_info"></a> Product info</legend>
+
+						<div class="clearfix">
+							<label for="xlInput">Name</label>
+							<div class="input">
+								<input class='xxlarge' name='name' value="<?php echo $this->data->row('name') ? $this->data->row('name') : ''; ?>" type='text'>
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<label for="xlInput">Price</label>
+							<div class="input">
+								<input class='xxlarge' name='price' value="<?php echo $this->data->row('price') ? $this->data->row('price') : ''; ?>" type='text'>
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<label for="xlInput">Description</label>
+							<div class="input">
+								<textarea name="description" rows='5' class='xxlarge wysiwyg' style='width:90%;'><?php echo $this->data->row('description') ? $this->data->row('description') : ''; ?></textarea>
+							</div>
+						</div>
+
+			        </fieldset>
+
+			        <fieldset>
+			          <div class="actions">
+			            <input type="submit" class="btn primary" value="Save changes">&nbsp;<button type="reset" class="btn back">Cancel</button>
+			          </div>
+			        </fieldset>
+			      </form>
+		  	</div>
+		</div>
+
+	</div>
+
+</div>
