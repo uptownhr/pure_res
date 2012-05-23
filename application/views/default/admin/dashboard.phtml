@@ -1,0 +1,144 @@
+<?php
+$hitsByLastThirtyDays = Jien::model("Hit")->select("DAY(created) as day, count(*) as count")->groupBy("YEAR(created), MONTH(created), DAY(created)")->limit(30)->get()->rows();
+$usersByLastThirtyDays = Jien::model("User")->select("DAY(created) as day, count(*) as count")->groupBy("YEAR(created), MONTH(created), DAY(created)")->limit(30)->get()->rows();
+
+$hitsByLastTwelveMonths = Jien::model("Hit")->select("MONTH(created) as month, count(*) as count")->groupBy("YEAR(created), MONTH(created)")->limit(12)->get()->rows();
+$usersByLastTwelveMonths = Jien::model("User")->select("MONTH(created) as month, count(*) as count")->groupBy("YEAR(created), MONTH(created)")->limit(12)->get()->rows();
+
+?>
+<div class="content">
+	<div class="page-header">
+	  <h1>Dashboard<small> </small></h1>
+	</div>
+
+
+	<div class="row">
+	  <div class="span16">
+    	<h2>Last 30 days</h2>
+
+    	<div id="hits_by_day"></div>
+    	<script type="text/javascript">
+	      google.load("visualization", "1", {packages:["corechart"]});
+	      google.setOnLoadCallback(drawChart);
+	      function drawChart() {
+	        var data = new google.visualization.DataTable();
+	        data.addColumn('string', 'Day');
+	        data.addColumn('number', 'Visitors');
+	        data.addRows(<?php echo count($hitsByLastThirtyDays); ?>);
+			<?php
+				foreach($hitsByLastThirtyDays AS $key=>$hits){
+			?>
+			data.setValue(<?php echo $key; ?>, 0, '<?php echo $hits['day']; ?>');
+			data.setValue(<?php echo $key; ?>, 1, <?php echo $hits['count']; ?>);
+	        <?php
+				}
+	        ?>
+	        var chart = new google.visualization.ColumnChart(document.getElementById('hits_by_day'));
+	        chart.draw(data, {width: 900, height: 240, title: 'Visitors per day', hAxis: {title: 'Day', titleTextStyle: {color: 'red'}} });
+	      }
+	    </script>
+
+
+	    <div id="users_by_day"></div>
+    	<script type="text/javascript">
+	      google.load("visualization", "1", {packages:["corechart"]});
+	      google.setOnLoadCallback(drawChart);
+	      function drawChart() {
+	        var data = new google.visualization.DataTable();
+	        data.addColumn('string', 'Day');
+	        data.addColumn('number', 'Users');
+	        data.addRows(<?php echo count($usersByLastThirtyDays); ?>);
+			<?php
+				foreach($usersByLastThirtyDays AS $key=>$hits){
+			?>
+			data.setValue(<?php echo $key; ?>, 0, '<?php echo $hits['day']; ?>');
+			data.setValue(<?php echo $key; ?>, 1, <?php echo $hits['count']; ?>);
+	        <?php
+				}
+	        ?>
+	        var chart = new google.visualization.ColumnChart(document.getElementById('users_by_day'));
+	        chart.draw(data, {width: 900, height: 240, title: 'New users per day', hAxis: {title: 'Users', titleTextStyle: {color: 'red'}} });
+	      }
+	    </script>
+
+
+	  </div>
+	</div>
+
+
+
+
+
+
+	<div class="row">
+	  <div class="span16">
+    	<h2>Last 12 months</h2>
+
+    	<div id="hits_by_month"></div>
+    	<script type="text/javascript">
+	      google.load("visualization", "1", {packages:["corechart"]});
+	      google.setOnLoadCallback(drawChart);
+	      function drawChart() {
+	        var data = new google.visualization.DataTable();
+
+
+			/*data.addColumn('string', 'Day');
+	        data.addColumn('number', 'Visits');
+	        data.addRows(1);
+	        data.setValue(0, 0, '2004');
+	        data.setValue(0, 1, 1000);*/
+
+
+
+	        data.addColumn('string', 'Month');
+	        data.addColumn('number', 'Visitors');
+	        data.addRows(<?php echo count($hitsByLastTwelveMonths); ?>);
+			<?php
+				foreach($hitsByLastTwelveMonths AS $key=>$hits){
+			?>
+			data.setValue(<?php echo $key; ?>, 0, '<?php echo $hits['month']; ?>');
+			data.setValue(<?php echo $key; ?>, 1, <?php echo $hits['count']; ?>);
+	        <?php
+				}
+	        ?>
+
+	        var chart = new google.visualization.ColumnChart(document.getElementById('hits_by_month'));
+	        chart.draw(data, {width: 900, height: 240, title: 'Visitors per month', hAxis: {title: 'Month', titleTextStyle: {color: 'red'}} });
+	      }
+	    </script>
+
+
+	    <div id="users_by_month"></div>
+    	<script type="text/javascript">
+	      google.load("visualization", "1", {packages:["corechart"]});
+	      google.setOnLoadCallback(drawChart);
+	      function drawChart() {
+	        var data = new google.visualization.DataTable();
+	        data.addColumn('string', 'Month');
+	        data.addColumn('number', 'Users');
+	        data.addRows(<?php echo count($usersByLastTwelveMonths); ?>);
+			<?php
+				foreach($usersByLastTwelveMonths AS $key=>$hits){
+			?>
+			data.setValue(<?php echo $key; ?>, 0, '<?php echo $hits['month']; ?>');
+			data.setValue(<?php echo $key; ?>, 1, <?php echo $hits['count']; ?>);
+	        <?php
+				}
+	        ?>
+	        var chart = new google.visualization.ColumnChart(document.getElementById('users_by_month'));
+	        chart.draw(data, {width: 900, height: 240, title: 'New users per month', hAxis: {title: 'Users', titleTextStyle: {color: 'red'}} });
+	      }
+	    </script>
+
+
+	  </div>
+	</div>
+
+
+</div>
+
+<script>
+$.post("/admin/me", function(res){
+	console.log(res);
+});
+</script>
