@@ -9,11 +9,11 @@ class My_Controller extends Jien_Controller {
     	$theme = THEME;
     	$this->view->addScriptPath(APPLICATION_PATH.'/views/'.$theme.'/');
     	$this->layout('site');
-		
-    	switch($this->params['controller']){
+    	$params = $this->params();
+    	switch($params['controller']){
     		case 'index': $this->view->page = 'home';break;
     		case 'blog': $this->view->page = 'blog';break;
-    		case 'page': $this->view->page = $this->params['action'];break;
+    		case 'page': $this->view->page = $params['action'];break;
     	}
     	
     	// set title
