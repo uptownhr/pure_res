@@ -3,13 +3,13 @@
 					<div class="module m blogmod">
 		
 			    <div class="module-body">
-	        <img src="/images/stories/blogmodimg.jpg">        </div>
+	        <a href=""><img src="/images/stories/blogmodimg.jpg"></a>        </div>
 	</div>
 	
 					<div class="module m blogcmod">
 		
 <div class="module-body">
-	        <div style="float: left;margin-left: 30px;margin-top: 29px;">Filter By:</div>
+	        <div style="float: left;margin-left: 30px;margin-top: 29px;font-family:HelveticaBoldCondensed;">Filter By:</div>
 			<div style="color: #FFFFFF;float: right;margin-right: 30px;margin-top: 29px;text-transform: uppercase;">
 			<?php 
 				if( isset($this->params['category_id']) ){
@@ -22,8 +22,11 @@
 			<a class="<?php if($category_id == 0){ echo 'active'; }?>" href="/blog">All</a> |
 			
 			<?php 
+				$count = count($this->categories->rows() );
+				$i = 1;
 				foreach($this->categories->rows() as $category){?>
-					<a class="<?php if($category_id == $category['category_id']){ echo 'active'; }?>" href="/blog?category_id=<?php echo $category['category_id'];?>"><?php echo $category['category'];?></a> |
+					<a class="<?php if($category_id == $category['category_id']){ echo 'active'; }?>" href="/blog?category_id=<?php echo $category['category_id'];?>"><?php echo $category['category'];?></a> <?php if ($count != $i) { ?>|<?php } ?>
+				<?php $i++; ?>
 			<?php }?>
 			</div>        
 </div>
@@ -53,8 +56,8 @@
 				<!-- Leading items -->
 		<div id="itemListLeading">
 		<?php $x=0;foreach($this->data->rows() as $post){ if($x==2){$class="itemContainerLast"; $x=0;}else{$class="";$x++;}?>
-		<div class="itemContainer <?php echo $class;?>">
-			<div class="catItemView groupLeading">
+		<div class="itemContainer <?php echo $class;?>" style="height: auto; padding-bottom:30px; padding-top:10px;">
+			<div class="catItemView groupLeading" style="height: auto">
 				<div class="catItemBody">
 	  				<div class="catItemImageBlock">
 		  				<span class="catItemImage">
@@ -74,13 +77,15 @@
 			  		    </h3>
 		  			</div>
 	  				<div class="catItemIntroText">
-	  					<?php echo $post['message'];?>
-						<div class="social">
+	  					<span style="color:#878787;font-size:14px;font-family:'Myriad Pro'"><?php echo $post['message'];?></span>
+						<div class="social" style="height:24px">
 						<div style="border-top: 1px dotted;height: 24px;margin: 20px auto 0;padding-top: 20px;width: 275px;">
 						<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.1337330192.html#_=1337754676972&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fuptownhr.dyndns.org%2Findex.php%3Foption%3Dcom_k2%26view%3Ditemlist%26layout%3Dcategory%26task%3Dcategory%26id%3D1%26Itemid%3D41&amp;size=m&amp;text=Blog&amp;url=http%3A%2F%2Fuptownhr.dyndns.org%2Findex.php%3Foption%3Dcom_k2%26view%3Ditemlist%26layout%3Dcategory%26task%3Dcategory%26id%3D1%26Itemid%3D41&amp;via=ovclinicalsops" class="twitter-share-button twitter-count-horizontal" style="width: 110px; height: 20px; " title="Twitter Tweet Button"></iframe><iframe allowtransparency="" frameborder="0" scrolling="no" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2F%23%21%2Fpages%2FOV-Clinical-Trials%2F195827167105791%3Fnotif_t%3Dpage_new_likes&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" style="border-bottom: medium none; border-left: medium none; width: 96px; height: 21px; overflow: hidden; border-top: medium none; border-right: medium none"></iframe></div>
+						
 						<p>
 							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 						</p>
+						
 					</div>	  </div>
 	  
 		<div class="clr"></div>

@@ -205,7 +205,7 @@ span.attention {display:block;margin:15px 0;padding:8px 10px 8px 10px;background
 .sidemod .module-body{padding:0;}
 .contimg {margin-bottom: 10px;margin-top: 20px;margin-left: 70px;padding:0;}
 .blogmod {margin-top: 10px;padding: 0;width: 313px !important;}
-.blogcmod {background: none repeat scroll 0 0 #2d2d2d;height: 75px;margin-left: 10px;margin-top: 10px;width: 639px !important;padding: 0;color:#fff;}
+.blogcmod {background: none repeat scroll 0 0 #2d2d2d;height: 75px;margin-left: 10px;margin-top: 10px;width: 639px !important;padding: 0;color:#fff;font-size:12px; font-family:HelveticaBoldCondensed; text-transform: uppercase;}
 .blogcmod a{font-weight:normal;color:#fff;}
 .botmods {margin-left: 30px;}
 .about .component-pad {background: none repeat scroll 0 0 #FFFFFF;margin-top: 10px;width: 680px;margin-bottom: 10px;}
@@ -298,3 +298,7 @@ label { color: #3E3E3E; font-size: 14px; font-weight: bold; font-family: 'Myriad
 #contact-form input, #contact-form textarea { background: #F4F4F4; border: 1px solid #EDEDED; font-family: 'Myriad Pro'; padding:6px; width: 250px; }
 
 #contact-form button { background: red; border: none; color: white; font-family:HelveticaBoldCondensed; font-size: 18px; text-align: center; width: 135px; height: 40px; cursor: pointer; }
+
+.catItemDateCreated { color:#606060; font-size:14px; font-family:'Myriad Pro'; font-weight: bold; }
+
+.catItemTitle { color: #1F1F1F; font-family:'Myriad Pro'!important; font-size: 20px; font-weight:bold; font-style:italic; }
