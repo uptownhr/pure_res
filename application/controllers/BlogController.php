@@ -8,7 +8,15 @@ class BlogController extends My_Controller {
 
     public function indexAction(){
     	$params = $this->params();
-    	$this->view->data = Jien::model("Post")->orderBy("p.post_id DESC")->isPublished()->joinUser()->joinCategory()->filter($this->params())->withPager($this->params('page', 1))->get();
+    	$this->view->data = Jien::model("Post")
+    				->orderBy("p.post_id DESC")
+    				->isPublished()
+    				->joinUser()
+    				->joinCategory()
+    				->filter($this->params())
+    				->withPager($this->params('page', 1))
+    				->limit(6)
+    				->get();
     }
 
     public function postAction(){
