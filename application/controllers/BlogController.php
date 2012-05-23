@@ -8,6 +8,9 @@ class BlogController extends My_Controller {
 
     public function indexAction(){
     	$params = $this->params();
+    	$this->view->categories = Jien::model('Category')
+    				->where('type="post"')
+    				->get();
     	$this->view->data = Jien::model("Post")
     				->orderBy("p.post_id DESC")
     				->isPublished()

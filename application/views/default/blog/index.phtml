@@ -8,9 +8,14 @@
 	
 					<div class="module m blogcmod">
 		
-			    <div class="module-body">
+<div class="module-body">
 	        <div style="float: left;margin-left: 30px;margin-top: 29px;">Filter By:</div>
-<div style="color: #FFFFFF;float: right;margin-right: 30px;margin-top: 29px;text-transform: uppercase;"><a href="/index.php?option=com_k2&amp;view=itemlist&amp;layout=category&amp;task=category&amp;id=2&amp;Itemid=41">Nutrition</a>  |  <a href="/index.php?option=com_k2&amp;view=itemlist&amp;layout=category&amp;task=category&amp;id=3&amp;Itemid=41">Fitness</a>  | <a href="/index.php?option=com_k2&amp;view=itemlist&amp;layout=category&amp;task=category&amp;id=4&amp;Itemid=41">Success Stories</a></div>        </div>
+			<div style="color: #FFFFFF;float: right;margin-right: 30px;margin-top: 29px;text-transform: uppercase;">
+			<?php foreach($this->categories->rows() as $category){?>
+				<a href="/blog?category_id=<?php echo $category['category_id'];?>"><?php echo $category['category'];?></a> |
+			<?php }?>
+			</div>        
+</div>
 	</div>
 	
 			
