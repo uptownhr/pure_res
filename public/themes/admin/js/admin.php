@@ -84,8 +84,9 @@ $(document).ready(function(){
   	// save form event
   	$('form.trig_save').submit(function(e){
 		e.preventDefault();
+		var url = $(this).attr('action');
 		var data = jien.util.serializeForm(this);
-		$.post("/admin/data", data, function(res){
+		$.post(url, data, function(res){
 			if(res.status.code == 200){
 				jien.ui.growl('Saved!');
 				history.go(-1);

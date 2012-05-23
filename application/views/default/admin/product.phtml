@@ -14,7 +14,7 @@
 
 		<div class="row">
 		  	<div>
-		  		<form class="trig_save" action="/admin/data" method="POST">
+		  		<form class="trig_save" action="/admin/product" method="POST">
 		  			<input type="hidden" name="model" value="<?php echo $this->model; ?>">
 		  			<input type="hidden" name="id" value="<?php echo $this->params('id'); ?>">
 		  			<input type="hidden" name="user_id" value="<?php echo $this->data->row('user_id', $this->user['user_id']); ?>">
@@ -30,10 +30,25 @@
 						</div>
 
 						<div class="clearfix">
-							<label for="xlInput">Price</label>
+							<label for="xlInput">Price (default)</label>
 							<div class="input">
-								<input class='xxlarge' name='price' value="<?php echo $this->data->row('price') ? $this->data->row('price') : ''; ?>" type='text'>
+								<input class='small' name='price' value="<?php echo $this->data->row('price') ? $this->data->row('price') : ''; ?>" type='text'> <a id='add-size' href="#">Add a Size</a>
 							</div>
+						</div>
+						
+						<div id="sizes" class="clearfix">
+							<label for="xlInput">Sizes</label>
+							<div class="input">
+								<span class="span2">Size</span>
+								<span>Price</span>
+							</div>
+							
+							<?php foreach($this->product_sizes->rows() as $product_size){?>
+							<div class="input size" data-id="<?php echo $product_size['product_size_id'];?>">
+								<input class='small name' name="product_size[<?php echo $product_size['product_size_id'];?>][size]" value="<?php echo $product_size['size']; ?>" type='text'>
+								<input class='small price' name="product_size[<?php echo $product_size['product_size_id'];?>][price]" value="<?php echo $product_size['price']; ?>" type='text'>
+							</div>
+							<?php }?>
 						</div>
 
 						<div class="clearfix">
@@ -57,3 +72,17 @@
 	</div>
 
 </div>
+<script>
+	var product_size_counter = 0;
+	$('#add-size').click( function(e){
+		e.preventDefault();
+		var size_html = $('<div>').addClass('input size');
+		name_input = $('<input>').addClass('small name').attr('name','new_product_size[' + product_size_counter + '][size]');
+		console.log(name_input);
+		price_input = $('<input>').addClass('small price').attr('name','new_product_size[' + product_size_counter + '][price]');
+		size_html.append(name_input,price_input);
+		console.log(size_html);
+		$('#sizes').append(size_html);
+		product_size_counter++;
+	});
+</script>

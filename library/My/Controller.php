@@ -28,5 +28,12 @@ class My_Controller extends Jien_Controller {
     	));
 
     }
+	public function isPost(){
+    	if( $this->_request->getMethod() == "POST" ){
+    		return true;
+    	}else{
+    		return false;
+    	}
+    }
 
 }

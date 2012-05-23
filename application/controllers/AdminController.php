@@ -168,7 +168,15 @@ class AdminController extends My_Controller {
     	$this->view->model = "Product";
     	$id = $this->params('id');
     	if($id){
+    		$this->view->product_sizes = Jien::model('ProductSize')->where("product_id=$id")->get();
     		$this->view->data = Jien::model($this->view->model)->get($id);
+    	}
+    	
+    	if( $this->isPost() ){
+    		$product = $this->params();
+    		$product_sizes = $this->params('product_size');
+    		$new_product_sizes = $this->params('new_product_size');
+    		Jien::debug($product);
     	}
     }
 

@@ -7,9 +7,15 @@ class ProductController extends My_Controller {
 
     public function init() {
     	parent::init();
+    	if(!$this->params('id')){
+    		$this->redir('/page/products');
+    	}else{
+    		$this->_forward('index');
+    	}
     }
 
     public function indexAction() {
+    	$this->view->product = Jien::model('Product')->get($this->params('id'));
     }
 
 }
