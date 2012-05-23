@@ -3,7 +3,7 @@ table {border-collapse:collapse;border-spacing:0;}
 
 /* Main Layout */
 html {height:100%;margin-bottom:1px;}
-body {font:62.5%/1.2 Helvetica, Arial, sans-serif;color:#555;}
+body {font-size:13px; font-family:'Myriad Pro',Arial,sans-serif;color:#555;}
 h1,h2,h3,h4,.componentheading {font-weight:bold;margin:2em 0 1em;}
 h1,.componentheading {font-size:180%;}
 h2 {font-size:150%;}
@@ -157,8 +157,8 @@ span.attention {display:block;margin:15px 0;padding:8px 10px 8px 10px;background
 #footer ul {margin:0;}
 #footer li {list-style:none;float:left;padding-right:20px;font-weight:bold;}
 #login {display: block;float: left;}
-#lang {background: none repeat scroll 0 0 #EBEBEB;display: block;float: left;padding: 0 10px;}
-#menu {float: right; font-weight:normal; margin-right: 180px; }
+#lang {background: none repeat scroll 0 0 #EBEBEB;display: block;float: left;padding: 0 4px; height: 40px; }
+#menu {float: right; font-weight:normal; margin-right: 150px; }
 .mainphead {color: #FFFFFF;left: 30px;position: absolute;text-transform: uppercase;top: 40px;}
 .mainphead1 {color: #FFFFFF;font-size: 34px;left: 30px;position: absolute;text-transform: uppercase;top: 70px;}
 .mainpbutton {  background: none repeat scroll 0 0 #ED1C24;color: #FFFFFF;display: block;font-size: 14px;left: 24px;
@@ -173,18 +173,18 @@ span.attention {display:block;margin:15px 0;padding:8px 10px 8px 10px;background
 .m_mod {padding:0;width: 354px !important;}
 .m_mod .module-body{padding:0}
 #mainmods {background: url("../images/mainmodbg.jpg") no-repeat scroll 380px 256px transparent;border-top: 8px solid #606060;margin-bottom: 10px;}
-.m_social {border-right: 2px solid #D4D4D4;color: #606060;padding: 0;width: 136px !important;margin-bottom:10px;}
+.m_social {border-right: 1px dashed #D4D4D4;color: #606060;padding: 0;width: 136px !important;margin-bottom:10px; height:224px;}
 .m_social .module-body {padding:0;}
 .m_social h1 {font-weight: normal;line-height: 22px;margin-top: 12px;text-align: center;text-transform: uppercase;}
-.m_pure {border-right: 2px solid #D4D4D4;color: #606060;padding: 0;width: 193px !important;}
+.m_pure {border-right: 1px dashed #D4D4D4;color: #606060;padding: 0;width: 193px !important;}
 .m_pure h1 { font-weight: normal;line-height: 22px;margin-bottom: 8px;margin-top: 12px;text-align: center;   text-transform: uppercase;}
 .m_pure .module-body {padding:0;}
 .m_news .acymailing_form{background:#606060;}
 .m_news .acyfield_email {padding-left:5px;color:#fff; font-style:italic;}
 .m_news .acysubbuttons {padding-right:3px;}
-.m_news .button{padding: 4px 2px; background:#F0F1F0;border:none;}
-.m_news .acymailing_module_form td {padding-top:3px;padding-bottom:3px !important;}
-.m_news #user_email_formAcymailing1 {background:#606060;color:#fff;border:none;height: 26px;}
+.m_news .button{ background:#F0F1F0;border:none;}
+.m_news .acymailing_module_form td {}
+.m_news #user_email_formAcymailing1 {background:#606060;color:#fff;border:none;}
 .readmore {padding:0;background:#fff;width:354px !important;}
 .readmore .module-body{ overflow: hidden;padding: 0 0 10px 14px;width: 340px;}
 .readmore a{color:#E66B50;font-weight:normal;text-transform: uppercase;font-style:italic;}
@@ -194,7 +194,7 @@ span.attention {display:block;margin:15px 0;padding:8px 10px 8px 10px;background
 .info h3 {margin-top:5px;margin-bottom:5px;}
 .contact .component-pad{background:#fff;margin-bottom: 15px;width: 620px;}
 .maincomp{float: left;}
-.contmod {border-bottom:2px solid;padding: 0;margin-left: 70px;width: 272px;}
+.contmod {border-bottom:2px solid;padding: 0;margin-left: 70px;width: 282px;}
 .contmod .module-body{padding:0;}
 .contitle {border-bottom: 2px solid;font-size: 180%;margin-bottom: 20px;margin-top: 10px;padding-bottom: 15px;text-transform:uppercase;}
 #title {padding:0;}
@@ -210,7 +210,7 @@ span.attention {display:block;margin:15px 0;padding:8px 10px 8px 10px;background
 .botmods {margin-left: 30px;}
 .about .component-pad {background: none repeat scroll 0 0 #FFFFFF;margin-top: 10px;width: 680px;margin-bottom: 10px;}
 .abtmod1 {margin-left:10px;padding:0;margin-top:10px;margin-bottom: 10px;}
-.about .component-pad #page{padding:85px 50px 50px;}
+.about .component-pad #page{padding:35px 50px 50px;}
 #abtmod1 {float:left;margin-right:10px;margin-bottom:10px;}
 #abtmod1 .module{padding:0;}
 #abtmod1 .module-body {padding:0;}
@@ -238,15 +238,63 @@ span.attention {display:block;margin:15px 0;padding:8px 10px 8px 10px;background
 .store .readmore {background:#F8F7F7;}
 
 
-
+@font-face {
+    font-family: 'HelveticaBoldCondensed';
+    src: url('fonts/HelveticaBoldCondensed.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
 @font-face {
     font-family: 'HelveticaLTStd';
     src: url('fonts/HelveticaLTStd-LightCond.otf');
     font-weight: normal;
     font-style: normal;
 }
-#menu, #login, #lang { font-family:HelveticaLTStd; }
-#menu { font-size: 20px; margin-top:2px; }
+@font-face {
+    font-family: 'HelveticaLTStdBold';
+    src: url('fonts/HelveticaLTStd-BoldCond.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+#menu, #login, #lang, .pname1 { font-family:HelveticaLTStd; }
+#menu { margin-top:2px; }
+#menu li a { font-size: 20px; }
 #login { font-size: 16px; text-transform: uppercase; position: absolute; top: 22px; right: 100px; }
 #lang { font-size: 14px; position: absolute; top: 20px; right: 23px; }
 #nav { position: relative;  }
+.mainphead,.mainphead1,.mainpbutton,.seemore, h1, h3 { font-family: HelveticaBoldCondensed; }
+.mainphead { font-size: 14px; }
+.mainphead1 { font-size: 48px; }
+.mainpbutton { font-size: 18px; }
+.pname { font-size: 48px; color: #3E3E3E; font-family:HelveticaLTStdBold; margin-top:10px; }
+.pname1 { font-size: 22px; }
+h1 { color: #606060; font-size: 27px; line-height: 104%!important; }
+.m_news h3.module-title, .acymailing_module_form .text-input { font-family: 'Myriad Pro'; font-size: 13px; font-style: italic; }
+h3 { color:#606060; }
+#user_email_formAcymailing1 {
+	height: 18px; margin-top:-5px;
+}
+.m_news .button { font-family:HelveticaLTStdBold; font-size: 18px; padding: 6px 8px; height: 30px; display: block; }
+.acysubbuttons {height: auto;}
+.acyfield_email { padding-top: 0; }
+.acymailing_module_form { background: #606060!important; height: 42px; position: relative; width:240px; padding:0;  }
+.acymailing_module_form .button { position: absolute; top: 6px; right: 6px; }
+.acymailing_module_form .text-input { position: absolute; top: 6px; left: 6px; background: #606060!important; color: white; outline: none; border: none; height: 30px; width: 150px; }
+
+.company-info { font-family: 'Myriad Pro'; }
+
+#mainmods2 .module-title { font-family: HelveticaBoldCondensed; color: #3B3B3B; font-size: 14px; text-transform: uppercase; }
+
+h2.contentheadingabout { font-size:48px; color: #1F1F1F; font-family:HelveticaLTStdBold; text-transform:uppercase; font-weight: normal; margin-bottom:0.5em; }
+
+.preview { font-family: 'Myriad Pro'; font-size: 23px; font-style: italic; line-height: normal; color: #3E3E3E; }
+
+.social { height: 30px!important; }
+
+#col1 { margin-bottom: 0; }
+
+label { color: #3E3E3E; font-size: 14px; font-weight: bold; font-family: 'Myriad Pro'; margin-top: 1.5em; }
+
+#contact-form input, #contact-form textarea { background: #F4F4F4; border: 1px solid #EDEDED; font-family: 'Myriad Pro'; padding:6px; width: 250px; }
+
+#contact-form button { background: red; border: none; color: white; font-family:HelveticaBoldCondensed; font-size: 18px; text-align: center; width: 135px; height: 40px; cursor: pointer; }
