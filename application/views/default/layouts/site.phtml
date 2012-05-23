@@ -96,15 +96,15 @@ var K2SitePath = '/';
             <div id="nav">
                  <div id="menu">
 		         <ul id="mainlevel-nav">
-		         	<li><a href="/" class="mainlevel-nav" id="active_menu-nav">Home</a></li>
+		         	<li><a href="/" class="mainlevel-nav" <?php if($this->page == 'home'){ echo 'id="active_menu-nav"'; }?>>Home</a></li>
 		         	<li><span class="mainlevel-nav" >/</span></li>
-		         	<li><a href="/page/about" class="mainlevel-nav" >About</a></li>
+		         	<li><a href="/page/about" class="mainlevel-nav" <?php if($this->page == 'about'){ echo 'id="active_menu-nav"'; }?>>About</a></li>
 		         	<li><span class="mainlevel-nav" >/</span></li>
-		         	<li><a href="/page/products" class="mainlevel-nav" >Products</a></li>
+		         	<li><a href="/page/products" class="mainlevel-nav" <?php if($this->page == 'products' || $this->page == 'product'){ echo 'id="active_menu-nav"'; }?>>Products</a></li>
 		         	<li><span class="mainlevel-nav" >/</span></li>
-		         	<li><a href="/page/contact" class="mainlevel-nav" >Contact</a></li>
+		         	<li><a href="/page/contact" class="mainlevel-nav" <?php if($this->page == 'contact'){ echo 'id="active_menu-nav"'; }?>>Contact</a></li>
 		         	<li><span class="mainlevel-nav" >/</span></li>
-		         	<li><a href="/blog" class="mainlevel-nav" >Blog</a></li></ul>
+		         	<li><a href="/blog" class="mainlevel-nav" <?php if($this->page == 'blog'){ echo 'id="active_menu-nav"'; }?> >Blog</a></li></ul>
                  </div>
                  <div id="lang">
                  <p>Lang US</p>
