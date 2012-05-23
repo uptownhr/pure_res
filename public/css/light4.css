@@ -156,9 +156,9 @@ span.attention {display:block;margin:15px 0;padding:8px 10px 8px 10px;background
 #logo2 {width:165px;height:20px;background:url(../images/light4.png) 5px -646px no-repeat;display:block;float:right;margin-left:15px;margin-top:15px;}
 #footer ul {margin:0;}
 #footer li {list-style:none;float:left;padding-right:20px;font-weight:bold;}
-#login {display: block;float: left;margin: 20px 10px 10px 35px;}
-#lang {background: none repeat scroll 0 0 #EBEBEB;display: block;float: left;margin: 20px 10px 10px 14px;padding: 0 10px;}
-#menu {float: left;}
+#login {display: block;float: left;}
+#lang {background: none repeat scroll 0 0 #EBEBEB;display: block;float: left;padding: 0 10px;}
+#menu {float: right; font-weight:normal; margin-right: 180px; }
 .mainphead {color: #FFFFFF;left: 30px;position: absolute;text-transform: uppercase;top: 40px;}
 .mainphead1 {color: #FFFFFF;font-size: 34px;left: 30px;position: absolute;text-transform: uppercase;top: 70px;}
 .mainpbutton {  background: none repeat scroll 0 0 #ED1C24;color: #FFFFFF;display: block;font-size: 14px;left: 24px;
@@ -236,3 +236,17 @@ span.attention {display:block;margin:15px 0;padding:8px 10px 8px 10px;background
 .store #main {background: #fff;}
 .store #nav {background:#F4F4F4;}
 .store .readmore {background:#F8F7F7;}
+
+
+
+@font-face {
+    font-family: 'HelveticaLTStd';
+    src: url('fonts/HelveticaLTStd-LightCond.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+#menu, #login, #lang { font-family:HelveticaLTStd; }
+#menu { font-size: 20px; margin-top:2px; }
+#login { font-size: 16px; text-transform: uppercase; position: absolute; top: 22px; right: 100px; }
+#lang { font-size: 14px; position: absolute; top: 20px; right: 23px; }
+#nav { position: relative;  }
