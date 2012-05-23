@@ -45,6 +45,7 @@
 							
 							<?php foreach($this->product_sizes->rows() as $product_size){?>
 							<div class="input size" data-id="<?php echo $product_size['product_size_id'];?>">
+								<input class='small name' name="product_size[<?php echo $product_size['product_size_id'];?>][product_size_id]" value="<?php echo $product_size['product_size_id']; ?>" type='hidden'>
 								<input class='small name' name="product_size[<?php echo $product_size['product_size_id'];?>][size]" value="<?php echo $product_size['size']; ?>" type='text'>
 								<input class='small price' name="product_size[<?php echo $product_size['product_size_id'];?>][price]" value="<?php echo $product_size['price']; ?>" type='text'>
 							</div>

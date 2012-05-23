@@ -174,9 +174,24 @@ class AdminController extends My_Controller {
     	
     	if( $this->isPost() ){
     		$product = $this->params();
-    		$product_sizes = $this->params('product_size');
-    		$new_product_sizes = $this->params('new_product_size');
-    		Jien::debug($product);
+    		$product_sizes = $product['product_size'];
+    		$new_product_sizes = $product['new_product_size'];
+    		try{
+				Jien::model('Product')->save( $product );
+				foreach($product_sizes as $size){
+					$size['product_id'] = $id;
+					Jien::model('ProductSize')->save( $size );	
+				}
+				
+				foreach($new_product_sizes as $size){
+					$size['product_id'] = $id;
+					Jien::model('ProductSize')->save( $size );
+				}
+				$this->json( '', 200, 'success');			
+    		}catch(Exception $e){
+    			$this->json( $e->getMessage(), 403, 'error');
+    		}
+    		
     	}
     }
 
