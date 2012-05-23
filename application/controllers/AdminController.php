@@ -158,4 +158,36 @@ class AdminController extends My_Controller {
     	}
     }
 
+    public function productsAction(){
+    	$this->view->model = "Product";
+    	$this->view->primary = Jien::model($this->view->model)->getPrimary();
+    	$this->view->data = Jien::model($this->view->model)->orderBy("product.product_id DESC")->withPager($this->params('page', 1))->filter($this->params())->get();
+    }
+
+    public function productAction(){
+    	$this->view->model = "Product";
+    	$id = $this->params('id');
+    	if($id){
+    		$this->view->data = Jien::model($this->view->model)->get($id);
+    	}
+    }
+
+    public function ordersAction(){
+    	$this->view->model = "Order";
+    	$this->view->primary = Jien::model($this->view->model)->getPrimary();
+	try{
+    	$this->view->data = Jien::model($this->view->model)->orderBy("order.order_id DESC")->withPager($this->params('page', 1))->filter($this->params())->get();
+}catch(Exception $e){
+		 echo $e->getMessage();exit;
+}
+    }
+
+    public function orderAction(){
+    	$this->view->model = "Order";
+    	$id = $this->params('id');
+    	if($id){
+    		$this->view->data = Jien::model($this->view->model)->get($id);
+    	}
+    }
+
 }
