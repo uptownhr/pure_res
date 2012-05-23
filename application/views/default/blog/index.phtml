@@ -11,8 +11,14 @@
 <div class="module-body">
 	        <div style="float: left;margin-left: 30px;margin-top: 29px;">Filter By:</div>
 			<div style="color: #FFFFFF;float: right;margin-right: 30px;margin-top: 29px;text-transform: uppercase;">
-			<?php foreach($this->categories->rows() as $category){?>
-				<a href="/blog?category_id=<?php echo $category['category_id'];?>"><?php echo $category['category'];?></a> |
+			<?php 
+				if( isset($this->params['category_id']) ){
+					$category_id = $this->params['category_id']; 
+				}else{
+					$category_id = 0;
+				}
+				foreach($this->categories->rows() as $category){?>
+					<a class="<?php if($category_id == $category['category_id']){ echo 'active'; }?>" href="/blog?category_id=<?php echo $category['category_id'];?>"><?php echo $category['category'];?></a> |
 			<?php }?>
 			</div>        
 </div>
@@ -55,7 +61,7 @@
 	  				</div>
       				<div class="catItemHeader">
 						<span class="catItemDateCreated">
-						<?php echo $post['created'];?>		
+						<?php echo date( 'm-d-y', strtotime($post['created']));?>		
 						</span>
 					  	<!-- Item title -->
 		  				<h3 class="catItemTitle">
