@@ -1,4 +1,14 @@
 <?php $product = $this->product->row();?>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.browseProductImage').click(function(e) {
+		e.preventDefault();
+		var href = $(this).parent().attr('href');
+		$('.vimage img').attr('src',href);
+	});
+});
+</script>
 <div class="maincomp">
 	<div id="title">
 		<div class="module m contitle">
@@ -41,7 +51,7 @@
 						title="Multi-Vitamin" rel="lightbox[product17]"><img
 						src="http://worldws.com/james/components/com_virtuemart/show_image_in_imgtag.php?filename=%2Fcomponents%2Fcom_virtuemart%2Fshop_image%2Fproduct%2FUntitled-1.jpg&amp;newxsize=642&amp;newysize=640&amp;fileout="
 						alt="" height="49" width="50" class="browseProductImage"
-						border="0"> </a> <a
+						border="0"></a><a
 						href="http://worldws.com/james/components/com_virtuemart/shop_image/product/cake-design-10-500x375.jpg"
 						title="Multi-Vitamin" rel="lightbox[product17]"><img
 						src="http://worldws.com/james/components/com_virtuemart/show_image_in_imgtag.php?filename=%2Fcomponents%2Fcom_virtuemart%2Fshop_image%2Fproduct%2Fcake-design-10-500x375.jpg&amp;newxsize=642&amp;newysize=640&amp;fileout="
@@ -111,17 +121,8 @@
 			<div class="social">
 				<div
 					style="height: 24px; margin: 0 0 0; padding-top: 0px; width: 275px;">
-					<iframe allowtransparency="true" frameborder="0" scrolling="no"
-						src="http://platform.twitter.com/widgets/tweet_button.1337330192.html#_=1337756755805&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fuptownhr.dyndns.org%2Findex.php%3Foption%3Dcom_virtuemart%26Itemid%3D57&amp;size=m&amp;text=Multi-Vitamin&amp;url=http%3A%2F%2Fuptownhr.dyndns.org%2Findex.php%3Foption%3Dcom_virtuemart%26Itemid%3D57&amp;via=ovclinicalsops"
-						class="twitter-share-button twitter-count-horizontal"
-						style="width: 110px; height: 20px;" title="Twitter Tweet Button"></iframe>
-					<iframe allowtransparency="" frameborder="0" scrolling="no"
-						src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2F%23%21%2Fpages%2FOV-Clinical-Trials%2F195827167105791%3Fnotif_t%3Dpage_new_likes&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21"
-						style="border-bottom: medium none; border-left: medium none; width: 96px; height: 21px; overflow: hidden; border-top: medium none; border-right: medium none"></iframe>
+					<iframe allowtransparency="true" frameborder="0" scrolling="no" src="//platform.twitter.com/widgets/tweet_button.html" class="twitter-share-button twitter-count-horizontal" style="width: 110px; height: 20px; " title="Twitter Tweet Button"></iframe><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2F<?php echo $_SERVER['HTTP_HOST'];?><?php echo $_SERVER['REQUEST_URI'];?>&amp;send=false&amp;layout=button_count&amp;width=96&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=182003968585041" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:96px; height:21px;" allowTransparency="true"></iframe>
 				</div>
-				<p>
-					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-				</p>
 
 			</div>
 
@@ -132,4 +133,3 @@
 		</div>
 
 	</div>
-</div>

@@ -158,7 +158,7 @@ span.attention {display:block;margin:15px 0;padding:8px 10px 8px 10px;background
 #footer li {list-style:none;float:left;padding-right:20px;font-weight:bold;}
 #login {display: block;float: left;}
 #lang {background: none repeat scroll 0 0 #EBEBEB;display: block;float: left;padding: 0 4px; height: 40px; }
-#menu {float: right; font-weight:normal; margin-right: 150px; }
+#menu {float: right; font-weight:normal; margin-right: 185px; }
 .mainphead {color: #FFFFFF;left: 30px;position: absolute;text-transform: uppercase;top: 40px;}
 .mainphead1 {color: #FFFFFF;font-size: 34px;left: 30px;position: absolute;text-transform: uppercase;top: 70px;}
 .mainpbutton {  background: none repeat scroll 0 0 #ED1C24;color: #FFFFFF;display: block;font-size: 14px;left: 24px;
@@ -298,13 +298,13 @@ h2.contentheadingabout { font-size:48px; color: #1F1F1F; font-family:HelveticaLT
 
 label { color: #3E3E3E; font-size: 14px; font-weight: bold; font-family: 'Myriad Pro'; margin-top: 1.5em; }
 
-#contact-form input, #contact-form textarea { background: #F4F4F4; border: 1px solid #EDEDED; font-family: 'Myriad Pro'; padding:6px; width: 250px; }
+#contact-form input[type="text"], #contact-form textarea { background: #F4F4F4; border: 1px solid #EDEDED; font-family: 'Myriad Pro'; padding:6px; width: 250px; }
 
 #contact-form button, .addtocart { background: red; border: none; color: white; font-family:HelveticaBoldCondensed; font-size: 18px; text-align: center; width: 135px; height: 40px; cursor: pointer; }
 
 .catItemDateCreated { color:#606060; font-size:14px; font-family:'Myriad Pro'; font-weight: bold; }
 
-.catItemTitle { color: #1F1F1F; font-family:'Myriad Pro'!important; font-size: 20px; font-weight:bold; font-style:italic; }
+.catItemTitle { text-transform: uppercase; color: #1F1F1F; font-family:'Myriad Pro'!important; font-size: 20px; font-weight:bold; font-style:italic; }
 
 .product-list { width: 314px; float: left; margin-right: 10px; margin-top: 10px; position: relative; height: 400px; background: white; text-align: center; }
 
@@ -325,7 +325,7 @@ label { color: #3E3E3E; font-size: 14px; font-weight: bold; font-family: 'Myriad
 
 .post-body { font-family: 'Myriad Pro'!important; font-size: 13px; }
 
-.vimage { width: 642px; float: left; margin-right: 22px; }
+.vimage { width: 642px; float: left; margin-right: 22px; text-align: center; }
 
 #vmMainPage  { background: white; padding-right: 20px; padding-bottom: 20px; padding-top: 20px; margin-top: -15px; }
 
@@ -333,13 +333,16 @@ label { color: #3E3E3E; font-size: 14px; font-weight: bold; font-family: 'Myriad
 
 span.super-title { font-size: 14px; color: #3E3E3E; text-transform:uppercase; }
 
+#vmMainPage .social { margin-top: 1em; }
+
 .vdesc { font-size: 14px; font-family: 'Myriad Pro'; }
 
 .vmore, .vmAttribChildDetail label { color: #C0C0C0; font-size: 14px; text-transform: uppercase; font-weight: bold; }
 
-.browseProductImage { border: 6px solid #F4F4F4; }
+.browseProductImage { border: 6px solid #F4F4F4; margin-right: 4px; }
+.browseProductImage:hover { border: 6px solid #eee; text-decoration:none; }
 
-.vprice { font-family: 'HelveticaLTStdBold'; margin: 1em 0 0.5em; font-size: 39px; line-height: 130%; }
+.vprice { font-family: 'HelveticaLTStdBold'; margin: 0.5em 0 0.5em; margin-left: 662px; border-top: #333 solid 1px; padding-top: 0.5em; font-size: 39px; line-height: 130%; }
 
 .productPrice { font-size: 39px; }
 
@@ -348,3 +351,5 @@ span.super-title { font-size: 14px; color: #3E3E3E; text-transform:uppercase; }
 #qty, select { background: #F4F4F4; border: none; border: 1px solid #EDEDED; padding: 4px; }
 
 .addtocart { margin: 1em 0; font-size: 18px; text-transform:uppercase; margin-left: -60px; }
+
+#view-cart { background: url(/images/cart.gif) left center no-repeat; padding-left: 25px; font-weight: bold; font-size: 11px; position: absolute; top: 30px; right: 95px; }
