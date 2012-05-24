@@ -74,7 +74,7 @@
 							
 							<div class="input">
 							<?php foreach($this->product_images->rows() as $image){?>
-								<img style="width: 200px;" src="<?php echo $image['path'];?>" class="product-thumb">
+								<img data-product_image_id="<?php echo $image['product_image_id']; ?>" style="cursor:pointer; width: 200px;" src="<?php echo $image['path'];?>" class="product-thumb">
 							<?php }?>
 							</div>
 							
@@ -112,5 +112,27 @@
 		img_input = $('<input>').attr('type','file').attr('name',img_counter);
 		$('#images .file').append(img_input);
 		img_counter++;
+	});
+
+	$('.product-thumb').hover( function(){
+		$(this).fadeTo(.01,.7);
+	}, function(){
+		$(this).fadeTo(.01,1);
+	});
+
+	$('.product-thumb').click( function(e){
+		var $this = $(this);
+		var r = confirm("Delete?");
+		if(r == true){
+			product_image_id = $this.attr('data-product_image_id');
+			console.log(product_image_id);
+			$.post('/admin/delete-product-image/', {product_image_id:product_image_id}, function(res){
+				if(res.status.code == 200){
+					$this.remove();
+				}else{
+					alert('soemthing went wrong');
+				}
+			});
+		}
 	});
 </script>
