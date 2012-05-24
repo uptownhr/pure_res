@@ -113,17 +113,17 @@ class AdminController extends My_Controller {
    		if( $this->isPost() ){
     		$post = $this->params();
     		try{
-				$id = Jien::model('Post')->save( $post );
-				if( count($_FILES) > 0){
-					foreach($_FILES as $file){
-						$file_name = Jien::GenerateSafeFileName($file['name']);
-						$path = 'post_img/' . $file_name;
-						move_uploaded_file($file['tmp_name'], $path);
-						Jien::model("ProductImage")->save( array('product_id'=>$id, 'path'=>'/'.$path) );
-					}
-				}
+    			if( isset($_FILES['image']) ){
+    				$file = $_FILES['image']; //set file details
+    				$file_name = Jien::GenerateSafeFileName($file['name']); //create file_name
+					$path = 'post_img/' . $file_name; //set file path for move
+					move_uploaded_file($file['tmp_name'], $path); //move temp to path
+					$db_path = '/'.$path; //set db_path
+					$post['img_path'] = $db_path; //add img_path for saving
+    			}
+				$id = Jien::model('Post')->save( $post );				
 				
-				$this->redir('/admin/products');		
+				$this->redir('/admin/posts');		
     		}catch(Exception $e){
     			$this->json( $e->getMessage(), 403, 'error');
     		}
@@ -245,5 +245,18 @@ class AdminController extends My_Controller {
     		$this->view->data = Jien::model($this->view->model)->get($id);
     	}
     }
-
+	
+    public function deleteProductImageAction(){
+    	$product_image_id = $this->params('product_image_id');
+    	if($product_image_id){
+    		$res = Jien::model('ProductImage')->delete($product_image_id);
+    		if($res){
+    			$this->json('',200,'deleted');
+    		}else{
+    			$this->json('',403,'problem deleting');
+    		}
+    	}else{
+    		$this->json('',403,'no id');
+    	}
+    }
 }
