@@ -307,7 +307,7 @@ label { color: #3E3E3E; font-size: 14px; font-weight: bold; font-family: 'Myriad
 
 .product-list img.product-thumb { margin-top: 20px; }
 
-.product-list .mainphead, .product-list .mainphead1 { color: #3E3E3E; margin-top: 266px; text-align: left; }
+.product-list .mainphead, .product-list .mainphead1 { color: #3E3E3E; margin-top: 266px; text-align: left; font-weight: normal; }
 
 
 .product-list .mainphead1 { letter-spacing:-1px; font-size:38px; }
