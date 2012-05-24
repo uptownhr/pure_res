@@ -9,5 +9,9 @@ class CartController extends My_Controller {
     public function indexAction(){
 
     }
+    
+    public function completeAction(){
+    
+    }
 
 }
