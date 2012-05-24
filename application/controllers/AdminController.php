@@ -189,12 +189,12 @@ class AdminController extends My_Controller {
 					$size['product_id'] = $id;
 					Jien::model('ProductSize')->save( $size );
 				}
-				
 				if( count($_FILES) > 0){
 					foreach($_FILES as $file){
 						$file_name = Jien::GenerateSafeFileName($file['name']);
 						$path = 'prod_img/' . $file_name;
-						Jien::model("ProductImage")->save( array('product_image_id'=>$id, 'path'=>$path) );
+						move_uploaded_file($file['tmp_name'], $path);
+						Jien::model("ProductImage")->save( array('product_id'=>$id, 'path'=>'/'.$path) );
 					}
 				}
 				

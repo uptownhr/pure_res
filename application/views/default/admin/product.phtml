@@ -64,11 +64,13 @@
 							<div class="input file">
 								<a href="#" id="add-image" style="line-height:30px;">Add Image</a>
 							</div>
-							<?php foreach($this->product_images->rows() as $image){?>
+							
 							<div class="input">
-								<img src="<?php echo $image['path'];?>" class="product-thumb">
-							</div>
+							<?php foreach($this->product_images->rows() as $image){?>
+								<img style="width: 200px;" src="<?php echo $image['path'];?>" class="product-thumb">
 							<?php }?>
+							</div>
+							
 						</div>
 						
 			        </fieldset>
