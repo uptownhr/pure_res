@@ -545,4 +545,18 @@ class Jien {
 		}
 
 	}
+	
+	static function GenerateSafeFileName($filename) {
+	    $filename = strtolower($filename);
+	    $filename = str_replace("#","_",$filename);
+	    $filename = str_replace(" ","_",$filename);
+	    $filename = str_replace("'","",$filename);
+	    $filename = str_replace('"',"",$filename);
+	    $filename = str_replace("__","_",$filename);
+	    $filename = str_replace("&","and",$filename);
+	    $filename = str_replace("/","_",$filename);
+	    $filename = str_replace("\\","_",$filename);
+	    $filename = str_replace("?","",$filename);
+	    return $filename;
+	}
 }

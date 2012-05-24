@@ -192,7 +192,8 @@ class AdminController extends My_Controller {
 				
 				if( count($_FILES) > 0){
 					foreach($_FILES as $file){
-						$file_name = '';
+						$file_name = Jien::GenerateSafeFileName($file['name']);
+						$path = '';
 					}
 				}
 				
