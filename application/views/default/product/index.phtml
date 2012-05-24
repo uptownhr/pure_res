@@ -55,12 +55,9 @@
     </div>
     <div class="vmAttribChildDetail" style="float:left;margin:3px;">
         <select class="inputboxattrib" id="Size_field" name="Size17">
-			        	        <option value="--_Please_Select_--">-- Please Select --</option>
-	                	        	        <option value="10">10</option>
-	                	        	        <option value="20">20</option>
-	                	        	        <option value="50">50</option>
-	                	        	        <option value="100">100</option>
-	                	        	        <option value="1000">1000</option>
+			        	        <?php foreach($this->product_sizes as $size){?>
+                	        	        <option value="<?php echo $size['product_size_id'];?>"><?php echo $size['size'];?></option>
+                	        	<?php }?>
 	                        </select>
     </div>
     <br style="clear:both;">

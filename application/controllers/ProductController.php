@@ -15,7 +15,9 @@ class ProductController extends My_Controller {
     }
 
     public function indexAction() {
-    	$this->view->product = Jien::model('Product')->get($this->params('id'));
+	    $id = $this->params('id');
+    	$this->view->product = Jien::model('Product')->get($id);
+    	$this->view->product_sizes = Jien::model('ProductSize')->where("product_id=$id")->get()->rows();
     }
 
 }
