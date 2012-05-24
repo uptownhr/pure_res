@@ -34,7 +34,7 @@ $categories = Jien::model("Category")->where("category.type = 'Post'")->orderBy(
 	<li>
 	<a href="/blog/post/id/<?php echo $record['post_id']; ?>"><?php echo $record['subject']; ?></a>
 	<p>
-		<span><?php echo date("F, d, Y", strtotime($record['created'])); ?> <a href="/blog/post/id/<?php echo $record['post_id']; ?>#disqus_thread">Loading ...</a></span>
+		<span><?php echo date("F, d, Y", strtotime($record['created'])); ?> <a href="/blog/post/id/<?php echo $record['post_id']; ?>#disqus_thread">Comments</a></span>
 	</p>
 	</li>
 	<?php } ?>

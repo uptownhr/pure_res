@@ -198,7 +198,7 @@ class AdminController extends My_Controller {
 					}
 				}
 				
-				$this->json( '', 200, 'success');			
+				$this->redir('/admin/products');		
     		}catch(Exception $e){
     			$this->json( $e->getMessage(), 403, 'error');
     		}
