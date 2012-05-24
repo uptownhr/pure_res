@@ -302,3 +302,14 @@ label { color: #3E3E3E; font-size: 14px; font-weight: bold; font-family: 'Myriad
 .catItemDateCreated { color:#606060; font-size:14px; font-family:'Myriad Pro'; font-weight: bold; }
 
 .catItemTitle { color: #1F1F1F; font-family:'Myriad Pro'!important; font-size: 20px; font-weight:bold; font-style:italic; }
+
+.product-list { width: 314px; float: left; margin-right: 10px; margin-top: 10px; position: relative; height: 400px; background: white; text-align: center; }
+
+.product-list img.product-thumb { margin-top: 20px; }
+
+.product-list .mainphead, .product-list .mainphead1 { color: #3E3E3E; margin-top: 266px; text-align: left; }
+
+
+.product-list .mainphead1 { letter-spacing:-1px; font-size:38px; }
+
+.product-list.last { margin-right: 0; }
