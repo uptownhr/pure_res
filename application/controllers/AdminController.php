@@ -193,7 +193,8 @@ class AdminController extends My_Controller {
 				if( count($_FILES) > 0){
 					foreach($_FILES as $file){
 						$file_name = Jien::GenerateSafeFileName($file['name']);
-						$path = '';
+						$path = 'prod_img/' . $file_name;
+						Jien::model("ProductImage")->save( array('product_image_id'=>$id, 'path'=>$path) );
 					}
 				}
 				
