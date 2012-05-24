@@ -109,6 +109,28 @@ class AdminController extends My_Controller {
     	if($id){
     		$this->view->data = Jien::model($this->view->model)->joinUser('u.username')->get($id);
     	}
+    	
+   		if( $this->isPost() ){
+    		$post = $this->params();
+    		try{
+				$id = Jien::model('Post')->save( $post );
+				if( count($_FILES) > 0){
+					foreach($_FILES as $file){
+						$file_name = Jien::GenerateSafeFileName($file['name']);
+						$path = 'post_img/' . $file_name;
+						move_uploaded_file($file['tmp_name'], $path);
+						Jien::model("ProductImage")->save( array('product_id'=>$id, 'path'=>'/'.$path) );
+					}
+				}
+				
+				$this->redir('/admin/products');		
+    		}catch(Exception $e){
+    			$this->json( $e->getMessage(), 403, 'error');
+    		}
+    		
+    	}
+    	
+    	
     }
 
     public function pagesAction(){

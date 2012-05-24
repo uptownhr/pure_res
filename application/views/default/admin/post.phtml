@@ -14,7 +14,7 @@
 
 		<div class="row">
 		  	<div>
-		  		<form class="trig_save" action="/admin/data" method="POST">
+		  		<form action="/admin/post" method="POST" enctype="multipart/form-data">
 		  			<input type="hidden" name="model" value="<?php echo $this->model; ?>">
 		  			<input type="hidden" name="id" value="<?php echo $this->params('id'); ?>">
 		  			<input type="hidden" name="user_id" value="<?php echo $this->data->row('user_id', $this->user['user_id']); ?>">
@@ -66,7 +66,13 @@
 								</select>
 							</div>
 						</div>
-
+						<div id="image" class="clearfix">
+							<label for="xlInput">Image</label>
+							<div class="input">
+								<input type="file" name="image">
+								<img style="width: 200px;" src="<?php echo $this->data->row('image_path') ? $this->data->row('image_path') : '';  ?>">
+							</div>
+						</div>
 			        </fieldset>
 
 			        <fieldset>
