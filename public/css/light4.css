@@ -327,7 +327,7 @@ label { color: #3E3E3E; font-size: 14px; font-weight: bold; font-family: 'Myriad
 
 .vimage { width: 642px; float: left; margin-right: 22px; }
 
-#vmMainPage { background: white; padding-right: 20px; padding-bottom: 20px; }
+#vmMainPage  { background: white; padding-right: 20px; padding-bottom: 20px; padding-top: 20px; margin-top: -15px; }
 
 #vmMainPage h1 { color: #3E3E3E; font-size: 34px; font-weight: normal; margin: 0; }
 
@@ -347,4 +347,4 @@ span.super-title { font-size: 14px; color: #3E3E3E; text-transform:uppercase; }
 
 #qty, select { background: #F4F4F4; border: none; border: 1px solid #EDEDED; padding: 4px; }
 
-.addtocart { margin: 1em 0; font-size: 18px; text-transform:uppercase; }
+.addtocart { margin: 1em 0; font-size: 18px; text-transform:uppercase; margin-left: -60px; }
