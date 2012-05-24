@@ -170,6 +170,7 @@ class AdminController extends My_Controller {
     	if($id){
     		$this->view->product_sizes = Jien::model('ProductSize')->where("product_id=$id")->get();
     		$this->view->data = Jien::model($this->view->model)->get($id);
+    		$this->view->product_images = Jien::model('ProductImage')->where("product_id=$id")->get();
     	}
     	
     	if( $this->isPost() ){
@@ -177,7 +178,8 @@ class AdminController extends My_Controller {
     		$product_sizes = $product['product_size'];
     		$new_product_sizes = $product['new_product_size'];
     		try{
-				Jien::model('Product')->save( $product );
+				$id = Jien::model('Product')->save( $product );
+				
 				foreach($product_sizes as $size){
 					$size['product_id'] = $id;
 					Jien::model('ProductSize')->save( $size );	
@@ -187,6 +189,14 @@ class AdminController extends My_Controller {
 					$size['product_id'] = $id;
 					Jien::model('ProductSize')->save( $size );
 				}
+				
+				if( count($_FILES) > 0){
+					foreach($_FILES as $file){
+						$file_name = Jien::GenerateSafeFileName($file['name']);
+						$path = '';
+					}
+				}
+				
 				$this->json( '', 200, 'success');			
     		}catch(Exception $e){
     			$this->json( $e->getMessage(), 403, 'error');
