@@ -5,7 +5,7 @@ var disqus_developer = 1;
 <?php
 $row = $this->data->row();
 ?>
-
+<div style="clear:both;"></div>
 			<div id="content">
 				<div class="one">
 					<!-- COLUMNS CONTAINER STARTS-->
@@ -17,9 +17,7 @@ $row = $this->data->row();
 				<!-- COLUMNS CONTAINER ENDS-->
 				<div class="one">
 					<div class="inner-content">
-
-
-						<h3><a href="/blog/post/id/<?php echo $row['post_id']; ?>"><?php echo $row['subject']; ?></a></h3>
+						<a href="/blog/post/id/<?php echo $row['post_id']; ?>"><h3 style="margin-top:0em"><?php echo $row['subject']; ?></h3></a>
 						<!--POST TITLE-->
 						<!--<p>
 							<img src="/themes/adventure/images/portfolio/blog-1.jpg" alt=" " width="710" height="210"/>
@@ -32,10 +30,10 @@ $row = $this->data->row();
 						<p><span  class='st_twitter_hcount' displayText='Tweet'></span><span  class='st_facebook_hcount' displayText='Facebook'></span></p>
 						<!--POST DETAILS-->
 						<!--POST INTRO-->
-						<p>
+						<div class="post-body">
 							 <?php echo $row['message']; ?>
 							 <div style="clear:both;"></div>
-						</p>
+						</div>
 						<!--POST LINK-->
 						<div class="horizontal-line">
 						</div>
@@ -55,6 +53,7 @@ $row = $this->data->row();
 					<!-- COLUMNS CONTAINER ENDS-->
 				</div>
 
+				<div style="clear:both"></div>
 
 <script type="text/javascript">
 
