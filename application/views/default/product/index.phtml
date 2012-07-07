@@ -1,5 +1,4 @@
 <?php $product = $this->product->row();?>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	$('.browseProductImage').click(function(e) {
@@ -22,7 +21,7 @@ $(document).ready(function(){
 			<br style="clear: both;">
 			<div class="maindiv">
 				<div class="vimage"><img
-						src="http://worldws.com/james/components/com_virtuemart/shop_image/product/resized/Multi_Vitamin_4f9493a1a421c_642x640.jpg"
+						src="<?php echo $this->product_images[0]['path']; ?>"
 						height="640" width="642" alt="Multi-Vitamin" border="0">
 				</div>
 			</div>
@@ -42,73 +41,63 @@ $(document).ready(function(){
 				<div class="vdesc">
 					<?php echo $product['description'];?>
 				</div>
-				<div class="vmore">more images</div>
-				<div class="vaimages">
-					<a
-						href="http://worldws.com/james/components/com_virtuemart/shop_image/product/Untitled-1.jpg"
-						title="Multi-Vitamin" rel="lightbox[product17]"><img
-						src="http://worldws.com/james/components/com_virtuemart/show_image_in_imgtag.php?filename=%2Fcomponents%2Fcom_virtuemart%2Fshop_image%2Fproduct%2FUntitled-1.jpg&amp;newxsize=642&amp;newysize=640&amp;fileout="
-						alt="" height="49" width="50" class="browseProductImage"
-						border="0"></a><a
-						href="http://worldws.com/james/components/com_virtuemart/shop_image/product/cake-design-10-500x375.jpg"
-						title="Multi-Vitamin" rel="lightbox[product17]"><img
-						src="http://worldws.com/james/components/com_virtuemart/show_image_in_imgtag.php?filename=%2Fcomponents%2Fcom_virtuemart%2Fshop_image%2Fproduct%2Fcake-design-10-500x375.jpg&amp;newxsize=642&amp;newysize=640&amp;fileout="
-						alt="" height="37" width="50" class="browseProductImage"
-						border="0"> </a>
-				</div>
-				<div class="vfile">
-					<span style="font-style: italic;"></span>
-				</div>
-
-				<div class="vprice">
-
-					<span class="productPrice"> $<?php echo $product['price'];?>
-					</span> <span class="vp">USD</span>
-				</div>
-
-				<div class="vaddtocart">
-					<div class="vmCartContainer">
-
-						<form action="http://worldws.com/james/index.php" method="post"
-							name="addtocart" id="addtocart_4fbc8c52a6cc3"
-							class="addtocart_form"
-							onsubmit="handleAddToCart( this.id );return false;">
-
-
-							<div class="vmCartDetails">
-
-								<div class="vmCartChild vmRowTwo">
-									<input type="hidden" name="product_id" value="17"> <input
-										type="hidden" name="prod_id[]" value="17">
-
-									<div class="vmCartAttributes">
-										<div style="float: left; margin-right:6px">
-											<div class="vmAttribChildDetail">
-												<label for="Size_field">Size</label>
+				<div class="bottom" style="float: right; width: 300px;">
+					<div class="vmore">more images</div>
+					<div class="vaimages">
+					<?php foreach($this->product_images as $images){?>
+						<a href="<?php echo $images['path'];?>">
+							<img
+								src="<?php echo $images['path']; ?>"
+								alt="" height="49" width="50" class="browseProductImage"
+								border="0">
+						</a>
+					<?php }?>
+					</div>
+					<div class="vfile">
+						<span style="font-style: italic;"></span>
+					</div>
+	
+					<div class="vprice">
+						<span class="productPrice"> $<?php echo $product['price'];?>
+						</span> <span class="vp">USD</span>
+					</div>
+	
+					<div class="vaddtocart">
+						<div class="vmCartContainer">
+	
+							<form action="/cart/add" method="post" id="add_to_cart">
+								<div class="vmCartDetails">
+									<div class="vmCartChild vmRowTwo">
+										<input type="hidden" name="product_id" value="<?php echo $product['product_id'];?>">
+										<div class="vmCartAttributes">
+											<div style="float: left; margin-right:6px">
+												<div class="vmAttribChildDetail">
+													<label for="Size_field">Size</label>
+												</div>
+												<div class="vmAttribChildDetail">
+													<select class="inputboxattrib" id="Size_field" name="size">
+														<?php foreach($this->product_sizes as $size){?>
+	                	        	        <option <?php if($product['price'] == $size['price']){ echo "selected"; }?> data-price="<?php echo $size['price'];?>" value="<?php echo $size['product_size_id'];?>"><?php echo $size['size'];?></option>
+	                	        	<?php }?>
+													</select>
+												</div>
 											</div>
-											<div class="vmAttribChildDetail">
-												<select class="inputboxattrib" id="Size_field" name="Size17">
-													<?php foreach($this->product_sizes as $size){?>
-                	        	        <option value="<?php echo $size['product_size_id'];?>"><?php echo $size['size'];?></option>
-                	        	<?php }?>
-												</select>
+											<div style="">
+												<div class="vmAttribChildDetail">
+													<label for="qty">Qty</label>
+												</div>
+												<div class="vmAttribChildDetail">
+													<input type="text" id="qty" value="1" name="qty" maxlength="3" style="width:40px"> 
+												</div>
 											</div>
+											
 										</div>
-										<div style="">
-											<div class="vmAttribChildDetail">
-												<label for="qty">Qty</label>
-											</div>
-											<div class="vmAttribChildDetail">
-												<input type="text" id="qty" name="qty" maxlength="3" style="width:40px"> 
-											</div>
-										</div>
-										
 									</div>
+	
 								</div>
-
-							</div>
-								<button type="submit" class="button addtocart">Add to Cart</button>
-						</form>
+									<button type="submit" class="button addtocart">Add to Cart</button>
+							</form>
+						</div>
 					</div>
 				</div>
 
@@ -133,3 +122,20 @@ $(document).ready(function(){
 	</div>
 	
 	</div>
+<script>
+$('#add_to_cart').submit( function(e){
+	var qty = $('#qty').val();
+	if(qty.length < 1 || qty < 1){
+		alert('Quantity is required');
+		return false;
+	}
+});
+
+$('#add_to_cart select').change( function(e){
+	$this = $('option:selected', this);
+	price = $this.attr('data-price');
+	
+	$('.productPrice').text( '$' + price );
+});
+
+</script>

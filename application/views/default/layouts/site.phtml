@@ -191,24 +191,29 @@
 									</div>
 									                                    
 																		<div id="mainmods2" class="spacer w33">
-												<div class="module m readmore">
-		
-				<h3 class="module-title" style="padding-top:15px;">Newsflash</h3>
-			    <div class="module-body">
-	        
+		<div class="module m readmore">
+		<h3 class="module-title" style="padding-top:15px;"><a style="text-decoration:none; font-style:normal; color:black" href="/blog">Newsflash</a></h3>
+<?php 
+		echo $this->editable(
+			'footer_news', 
+			'text', 
+			'
+			<div class="module-body">
+	        <table class="contentpaneopen readmore" padding="0">
+			<tr style="padding:0;">
+			<td valign="top" style="padding:0">
+			<p style="color:#878787; font-size:12px">
+				Sub heading goes here for user to read a tad bit more....</p></td>
+			</tr>
+			<tr>
+        	<td valign="top" >
 
+       		<a class="readmore" href="/blog" style="font-style:italic;">read more ></a>		</td>
+     		</tr>
+			</table>
+        	</div>'); 
+	?>		
 
-<table class="contentpaneopen readmore" padding="0">
-	<tr style="padding:0;">
-		<td valign="top" style="padding:0"><p style="color:#878787;font-family:'Myriad Pro'; font-size:12px">Sub heading goes here for user to read a tad bit more....</p></td>
-	</tr>
-	<tr>
-        <td valign="top" >
-
-       <a class="readmore" href="/index.php?option=com_content&amp;view=article&amp;id=2%3Anewsflash-1&amp;catid=3%3Anewsflash&amp;Itemid=1" style="font-family:'HelveticaBoldCondensed';font-style:italic;">read more ></a>		</td>
-     </tr>
-</table>
-        </div>
 	</div>
 	
 												<div class="module m info" id="company-info">

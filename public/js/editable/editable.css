@@ -1,5 +1,5 @@
 .editable { position: relative; }
-.editable_menu { background-color: orange; text-align: center; padding: 2px 10px; position: absolute; top:0px; left:-40px; border-radius: 20px 0; z-index: 99;}
+.editable_menu { background-color: orange; text-align: center; padding: 2px 10px; position: absolute; top:-10px; left:0px; border-radius: 20px 0; z-index: 99;}
 .editable_menu a { color: white; font-size: 10px;}
 .editable_hide { display: none; }
 

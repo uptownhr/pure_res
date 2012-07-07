@@ -210,7 +210,7 @@ span.attention {display:block;margin:15px 0;padding:8px 10px 8px 10px;background
 .botmods {margin-left: 30px;}
 .about .component-pad {background: none repeat scroll 0 0 #FFFFFF;margin-top: 10px;width: 680px;margin-bottom: 10px;}
 .abtmod1 {margin-left:10px;padding:0;margin-top:10px;margin-bottom: 10px;}
-.about .component-pad #page{padding:35px 50px 50px;}
+.about .component-pad #page{padding:10px 50px 50px;}
 #abtmod1 {float:left;margin-right:10px;margin-bottom:10px;}
 #abtmod1 .module{padding:0;}
 #abtmod1 .module-body {padding:0;}
@@ -288,7 +288,7 @@ h4 { font-family: HelveticaBoldCondensed; }
 
 h1 { text-transform: uppercase; }
 
-h2.contentheadingabout { font-size:48px; color: #1F1F1F; font-family:HelveticaLTStdBold; text-transform:uppercase; font-weight: normal; margin-bottom:0.5em; }
+h2.contentheadingabout { margin-top: 20px; font-size:48px; color: #1F1F1F; font-family:HelveticaLTStdBold; text-transform:uppercase; font-weight: normal; margin-bottom:0.5em; }
 
 .preview { font-family: 'Myriad Pro'; font-size: 23px; font-style: italic; line-height: normal; color: #3E3E3E; }
 
@@ -342,7 +342,7 @@ span.super-title { font-size: 14px; color: #3E3E3E; text-transform:uppercase; }
 .browseProductImage { border: 6px solid #F4F4F4; margin-right: 4px; }
 .browseProductImage:hover { border: 6px solid #eee; text-decoration:none; }
 
-.vprice { font-family: 'HelveticaLTStdBold'; margin: 0.5em 0 0.5em; margin-left: 662px; border-top: #333 solid 1px; padding-top: 0.5em; font-size: 39px; line-height: 130%; }
+.vprice { font-family: 'HelveticaLTStdBold'; margin: 0.5em 0 0.5em; border-top: #333 solid 1px; padding-top: 0.5em; font-size: 39px; line-height: 130%; }
 
 .productPrice { font-size: 39px; }
 
@@ -367,3 +367,7 @@ span.super-title { font-size: 14px; color: #3E3E3E; text-transform:uppercase; }
 #shopping-cart thead { text-align:left; font-size: 12px; color: white; background: #333!important; font-family: HelveticaBoldCondensed; text-transform:uppercase; background:#333; }
 
 .about { width: auto; }
+
+.main_header { text-decoration: none; }
+.main_header:visited { color: #ffffff; }
+.main_header:link { color: #ffffff; }

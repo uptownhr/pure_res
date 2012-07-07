@@ -64,7 +64,7 @@ var editable = {
 
 	cp: {
 		show: function(){
-			var html  = "<div id='editable_cp'>";
+			/*var html  = "<div id='editable_cp'>";
 				html += "	<h3>Change background</h3>";
 				html += "	<div>";
 				html += "		<img src='http://livepreview.webglogic.com/cleancreative/light/color_picker/images/pattern_cells.jpg'>";
@@ -88,7 +88,7 @@ var editable = {
 
 			$(html).appendTo(document.body).css({position: 'fixed', top: '200px', left: '0'});
 
-			$("#editable_cp").beResetCSS();
+			$("#editable_cp").beResetCSS();*/
 			$(".editable").beResetCSS();
 		}
 	}
