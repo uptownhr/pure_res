@@ -53,9 +53,10 @@
 				<div class="catItemBody">
 	  				<div class="catItemImageBlock">
 		  				<span class="catItemImage">
-		    				<a href="/blog/post/id/<?php echo $post['post_id'];?>" title="<?php echo $post['subject'];?>">
-		    				<img src="/media/k2/items/cache/c889234799e865bbe90cee71f6cd2e53_L.jpg" alt="<?php echo $post['subject'];?>" style="width:273px; height:auto;">
+		    				<?php if( !empty($post['img_path'])){?><a href="/blog/post/id/<?php echo $post['post_id'];?>" title="<?php echo $post['subject'];?>">
+		    				<img src="<?php echo $post['img_path'];?>" alt="<?php echo $post['subject'];?>" style="width:273px; height:auto;">
 		    				</a>
+		    				<?php }?>
 		  				</span>
 		  			<div class="clr"></div>
 	  				</div>
