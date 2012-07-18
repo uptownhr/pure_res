@@ -113,7 +113,7 @@ class AdminController extends My_Controller {
    		if( $this->isPost() ){
     		$post = $this->params();
     		try{
-    			if( isset($_FILES['image']) ){
+    			if( !empty($_FILES['image']['name']) ){
     				$file = $_FILES['image']; //set file details
     				$file_name = Jien::GenerateSafeFileName($file['name']); //create file_name
 					$path = 'post_img/' . $file_name; //set file path for move

@@ -84,6 +84,7 @@ $(document).ready(function(){
 												</div>
 												-->
 											</div>
+											<!-- 
 											<div style="">
 												<div class="vmAttribChildDetail">
 													<label for="qty">Qty</label>
@@ -92,12 +93,12 @@ $(document).ready(function(){
 													<input type="text" id="qty" value="1" name="qty" maxlength="3" style="width:40px"> 
 												</div>
 											</div>
-											
+											 -->
 										</div>
 									</div>
 	
 								</div>
-									<button type="submit" class="button addtocart">Add to Cart</button>
+									<a href="<?php echo $product['amz_url'];?>" target="_AMZ"><button type="submit" class="button addtocart">Add to Cart</button></a>
 							</form>
 						</div>
 					</div>
@@ -126,6 +127,7 @@ $(document).ready(function(){
 	</div>
 <script>
 $('#add_to_cart').submit( function(e){
+	return false;
 	var qty = $('#qty').val();
 	if(qty.length < 1 || qty < 1){
 		alert('Quantity is required');
